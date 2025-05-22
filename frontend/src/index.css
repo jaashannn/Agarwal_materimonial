@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #ffc0cb;
+  --secondary-color: #e6e6fa;
+  --rose-gold: #b76e79;
+  --peach: #ffdab9;
+  --ivory: #fffff0;
+  --champagne: #f7e7ce;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--ivory);
+  @apply text-gray-800 overflow-x-hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  @apply leading-tight;
+}
+
+.glass-card {
+  @apply bg-white/30 backdrop-blur-md rounded-xl border border-white/20 shadow-glass;
+}
+
+.button-primary {
+  @apply px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center gap-2;
+}
+
+.button-secondary {
+  @apply px-6 py-3 bg-secondary-500 hover:bg-secondary-600 text-white rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center gap-2;
+}
+
+.button-outline {
+  @apply px-6 py-3 bg-transparent border-2 border-primary-500 text-primary-500 hover:bg-primary-50 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center justify-center gap-2;
+}
+
+.input-field {
+  @apply px-4 py-3 bg-white/80 backdrop-blur-sm rounded-lg border border-primary-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-300 outline-none transition-all duration-300 w-full;
+}
+
+.page-container {
+  @apply w-full min-h-screen;
+}
+
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20;
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Custom cursor styles */
+.cursor-love {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewport='0 0 100 100' style='fill:black;'><text y='50%' x='50%' dy='.35em' text-anchor='middle' font-size='26'>❤️</text></svg>") 16 16, auto;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-heart-beat {
+  animation: heart-beat 1.5s ease-in-out infinite;
+}
+
+/* Scroll styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rose-gold);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
